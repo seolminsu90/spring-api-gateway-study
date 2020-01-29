@@ -14,9 +14,14 @@ api gateway(1) : api server(N)
 - 대충 이러지 않을까..
 #### Client 
 └── Gateway Server
+
     └── Authentication Server
+    
     └── Logging Server
+    
     └── Api Domain 1 Server set
+    
     └── Api Domain 2 Server set
+    
     ...
     ...
