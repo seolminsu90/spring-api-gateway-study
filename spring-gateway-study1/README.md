@@ -1,6 +1,3 @@
-# spring-api-gateway-study
-api gateway(1) : api server(N) 
-
 ### 설명
 - 제일 선행 단에 API gateway 역할을 하는 서버를 두고 Part 별로 API server를 여러개 두면
   마이크로 서비스와 같이 비슷한 구조를 갖지 않을까 라는 생각을 하며 샘플로 만들어 봄
