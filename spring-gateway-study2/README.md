@@ -6,6 +6,7 @@
 - v1과 동일하게 인증 등등은 따로 서버 분리가 필요
 - gateway서버는 인증서버(apikey발급 서버)로부터 받은 access_token refresh_token등등에 대한 처리를 해주고
   해당 token을 기반으로 인증된 토큰일 경우 Service Domain 접근 허용
+- JWT(auth0) token 기반으로 Sample Filter 적용함 (GET /domains url)
 ```diff
 - - 해당 부분 filter 개발 필요
 + - JWT(auth0) token 기반으로 Sample Filter 적용함 (GET /domains url)
