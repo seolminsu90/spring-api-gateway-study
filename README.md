@@ -11,3 +11,12 @@ api gateway(1) : api server(N)
 - Netty 서버는 처음 써봐서 한번 스터디를..
 - spring-cloud-starter-zuul 로 구현한 Gateway 도 언젠간..
 - 좋은글 http://woowabros.github.io/r&d/2017/06/13/apigateway.html 
+- 대충 이러지 않을까..
+#### Client 
+└── Gateway Server
+    └── Authentication Server
+    └── Logging Server
+    └── Api Domain 1 Server set
+    └── Api Domain 2 Server set
+    ...
+    ...
