@@ -30,3 +30,50 @@
     
         ...
         ...
+        
+        
+
+
+### 기타
+Annotaion 기반이아닌 yml File 기반의 설정시 (actuator-refresh가 편한 장점, 모아보는 장점?)
+```
+server:
+  port: 8080
+---
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - name: GlobalFilter
+          args:
+            baseMessage: Spring Cloud Gateway GlobalFilter
+            preLogger: true
+            postLogger: true
+      routes:
+        - id: user-svc
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/user/**
+          filters:
+            - name: UserFilter
+              args:
+                baseMessage: Spring Cloud Gateway UserFilter
+                preLogger: true
+                postLogger: true
+        - id: cafe-svc
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/cafe/**
+          filters:
+            - name: CafeFilter
+              args:
+                baseMessage: Spring Cloud Gateway CafeFilter
+                preLogger: true
+                postLogger: true
+```
+Class config로 구현한 내용들이 대부분 있음....
+
+- Route(경로) : 게이트웨이의 기본 골격이다. ID, 목적지 URI, 조건부(predicate) 집합, 필터(filter) 집합으로 구성된다.  조건부가 맞게 되면 해당하는 경로로 이동하게 된다. 
+- Predicate(조건부) : Java8의 Function Predicate이다. Input Type은 Spring Framework ServerWebExchange이다. 조건부를 통해 Header 나 Parameter같은 HTTP 요청의 모든 항목을 비교할 수 있다.
+- Filter(필터) : 특정 팩토리로 구성된 Spring Framework GatewayFilter 인스턴스다. Filter에서는 다운스트림 요청 전후에 요청/응답을 수정할 수 있다.
+(https://twofootdog.tistory.com/64)
