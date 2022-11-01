@@ -11,7 +11,6 @@
 - - 해당 부분 filter 개발 필요
 + - JWT(auth0) token 기반으로 Sample Filter 적용함 (GET /domains url)
 ```
-- 이런 식으로 나누어서 개발할 만큼 큰 서비스를 할 날이 올까
 - 튜토리얼 사이트 : https://spring.io/guides/gs/gateway/
 
 #### 구조는 대충 이런식으로..
